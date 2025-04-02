@@ -11,9 +11,9 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "noEmit": true,
-		"paths": {
-			"@/*": ["./*"]
-		},
+    "paths": {
+      "@/*": ["./*"]
+    },
     "plugins": [{ "name": "next" }],
     "resolveJsonModule": true,
     "skipLibCheck": true,

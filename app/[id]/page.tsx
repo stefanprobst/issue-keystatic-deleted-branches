@@ -1,7 +1,7 @@
 import "@/app/styles.css";
 
 import { evaluate } from "@mdx-js/mdx";
-import * as runtime from "react/jsx-runtime"
+import * as runtime from "react/jsx-runtime";
 
 import { reader } from "@/app/reader";
 
@@ -13,9 +13,7 @@ export async function generateStaticParams() {
   });
 }
 
-export default async function Post(props: {
-  params: Promise<{ id: string }>;
-}) {
+export default async function Post(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
   const { id } = params;
 
@@ -24,7 +22,7 @@ export default async function Post(props: {
   if (!post) return <div>Post not found!</div>;
 
   const content = await post.content();
-	const { default: Content } = await evaluate(content, { ...runtime })
+  const { default: Content } = await evaluate(content, { ...runtime });
 
   return (
     <div>
